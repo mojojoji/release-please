@@ -34,11 +34,11 @@ export class CargoToml extends DefaultUpdater {
     }
 
     const parsed = parseCargoManifest(payload);
-    if (!parsed.package) {
-      const msg = 'is not a package manifest (might be a cargo workspace)';
-      logger.error(msg);
-      throw new Error(msg);
-    }
+    // if (!parsed.package) {
+    //   const msg = 'is not a package manifest (might be a cargo workspace)';
+    //   logger.error(msg);
+    //   throw new Error(msg);
+    // }
     payload = replaceTomlValue(
       payload,
       ['package', 'version'],
